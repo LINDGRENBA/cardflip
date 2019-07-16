@@ -1,0 +1,44 @@
+
+.card-container {
+  perspective: 700;
+  /* perspective doesn't actually effect the container you apply it to, it effects its child element - in this case, its child div */
+}
+
+.card {
+  /* styling the text "hello" */
+  color: #fff;
+  text-align: center;
+  line-height: 200px;
+  /* end of text style */
+  position: relative;
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  /* div is already display block, if using on element that is not display block, would want to specify */
+  transition: all 1s ease;
+  transform-style: preserve-3d;
+  /* border: 1px solid black; */
+}
+
+.front, .back {
+  position: absolute;
+  background-color: #33FFBD;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+  /* if you want your card to rotate top to bottom, change rotateY to rotateX */
+}
